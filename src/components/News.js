@@ -66,7 +66,7 @@ export class News extends Component {
     render() {
         return (
             <div className="container my-2">
-                <h1 className="text-center">NewwwsApp - Top Headlines</h1>
+                <h1 className="text-center" style={{margin: '25px 0px'}}>NewwwsApp - Top Headlines </h1>
                 {this.state.loading && <Spinner /> }
                     { !this.state.loading && <>
                             <div className="row">
