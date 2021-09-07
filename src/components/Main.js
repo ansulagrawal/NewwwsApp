@@ -54,14 +54,14 @@ export default class Main extends Component {
                 mode={this.state.mode}
               />
             </Route>
-            <Route exact path="/general">
+            {/* <Route exact path="/general">
               <News
                 key="general"
                 pageSize={this.pageSize}
                 category="general"
                 mode={this.state.mode}
               />
-            </Route>
+            </Route> */}
             <Route exact path="/health">
               <News
                 key="health"

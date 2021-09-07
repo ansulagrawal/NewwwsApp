@@ -7,7 +7,8 @@ export class News extends Component {
   static defaultProps = {
     pageSize: 12,
     country: "us",
-    apiKey: "81a62fded08c4c2ca183d7ce5953f00c",
+    // apiKey: "81a62fded08c4c2ca183d7ce5953f00c",
+    apiKey: "dd87dc38ca2747679643aea9faea171e",
     category: "general",
     mode: "light",
   };
@@ -19,13 +20,21 @@ export class News extends Component {
     mode: PropTypes.string,
   };
 
-  constructor() {
-    super();
+  capatalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
+  constructor(props) {
+    super(props);
     this.state = {
       articles: [],
       loading: false,
       page: 1,
     };
+
+    document.title = `${this.capatalizeFirstLetter(
+      this.props.category
+    )} - NewwwsApp`;
   }
 
   async updateNews() {
@@ -63,7 +72,8 @@ export class News extends Component {
           }`}
           style={{ margin: "25px 0px" }}
         >
-          NewwwsApp - Top Headlines{" "}
+          NewwwsApp - Top {this.capatalizeFirstLetter(this.props.category)}{" "}
+          Headlines
         </h1>
         {this.state.loading && <Spinner />}
         {!this.state.loading && (
