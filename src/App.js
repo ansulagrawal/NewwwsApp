@@ -1,16 +1,13 @@
-import './App.css';
-
-import React, { Component } from 'react'
-import NavBar from './components/NavBar';
-import News from './components/News';
+import "./App.css";
+import React, { Component } from "react";
+import Main from "./components/Main";
 
 export default class App extends Component {
   render() {
     return (
       <>
-          <NavBar />
-          <News pageSize= {9} country = "us" category = "sports" />
+        <Main />
       </>
-    )
+    );
   }
 }
