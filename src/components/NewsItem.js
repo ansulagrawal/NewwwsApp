@@ -2,10 +2,15 @@ import React, { Component } from "react";
 import noImage from "../images/noImage.jpg";
 export class NewsItem extends Component {
   render() {
-    let { title, description, imageUrl, newsUrl, author, date } = this.props;
+    let { title, description, imageUrl, newsUrl, author, date, mode } =
+      this.props;
     return (
       <div className="my-3">
-        <div className="card">
+        <div
+          className={`card bg-${mode === "dark" ? "dark" : "light"} text-${
+            mode === "dark" ? "light" : "dark"
+          }`}
+        >
           <img
             src={imageUrl ? imageUrl : noImage}
             className="card-img-top"
@@ -24,7 +29,9 @@ export class NewsItem extends Component {
               rel="noreferrer"
               href={newsUrl}
               target="_blank"
-              className="btn btn-sm btn-primary"
+              className={`btn btn-sm btn-${
+                mode === "dark" ? "secondary" : "primary"
+              }`}
             >
               Read More
             </a>

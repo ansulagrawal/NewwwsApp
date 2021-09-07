@@ -9,12 +9,14 @@ export class News extends Component {
     country: "us",
     apiKey: "81a62fded08c4c2ca183d7ce5953f00c",
     category: "general",
+    mode: "light",
   };
 
   static propTypes = {
     pageSize: PropTypes.number,
     country: PropTypes.string,
     category: PropTypes.string,
+    mode: PropTypes.string,
   };
 
   constructor() {
@@ -55,7 +57,12 @@ export class News extends Component {
   render() {
     return (
       <div className="container my-2">
-        <h1 className="text-center" style={{ margin: "25px 0px" }}>
+        <h1
+          className={`text-center text-${
+            this.props.mode === "dark" ? "light" : "dark"
+          }`}
+          style={{ margin: "25px 0px" }}
+        >
           NewwwsApp - Top Headlines{" "}
         </h1>
         {this.state.loading && <Spinner />}
@@ -76,6 +83,7 @@ export class News extends Component {
                       newsUrl={element.url}
                       author={element.author}
                       date={element.publishedAt}
+                      mode={this.props.mode}
                     />
                   </div>
                 );

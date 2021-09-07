@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 export class NavBar extends Component {
   render() {
-    // let {mode} = this.props;
+    let { mode, toggleMode } = this.props;
     return (
       <>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               NewwwsApp
@@ -69,20 +69,27 @@ export class NavBar extends Component {
                   </Link>
                 </li>
               </ul>
-            </div>
-            <div className={`form-check form-switch text-dark`}>
-              {/* <input className="form-check-input" type="checkbox" onClick={mode} id="flexSwitchCheckDefault" /> */}
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="flexSwitchCheckDefault"
-              />
-              <label
-                className="form-check-label "
-                htmlFor="flexSwitchCheckDefault"
-              >
-                Darkmode
-              </label>
+              <div className={`form-check form-switch text-dark`}>
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  onClick={toggleMode}
+                  id="flexSwitchCheckDefault"
+                />
+                {/* <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="flexSwitchCheckDefault"
+                /> */}
+                <label
+                  className={`form-check-label text-${
+                    mode === "light" ? "dark" : "light"
+                  }`}
+                  htmlFor="flexSwitchCheckDefault"
+                >
+                  {`Enable ${mode === "light" ? "Dark" : "Light"}mode`}
+                </label>
+              </div>
             </div>
           </div>
         </nav>
