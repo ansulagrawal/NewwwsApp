@@ -21,7 +21,7 @@ export default class Main extends Component {
     }
   };
 
-  pageSize = 21;
+  pageSize = 6;
 
   render() {
     return (
