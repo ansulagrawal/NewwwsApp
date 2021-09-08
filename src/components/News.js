@@ -8,8 +8,6 @@ export class News extends Component {
   static defaultProps = {
     pageSize: 12,
     country: "us",
-    // apiKey: "81a62fded08c4c2ca183d7ce5953f00c",
-    apiKey: "dd87dc38ca2747679643aea9faea171e",
     category: "general",
     mode: "light",
   };
