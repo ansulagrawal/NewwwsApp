@@ -9,9 +9,7 @@ export class NavBar extends Component {
       <>
         <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/">
-              NewwwsApp
-            </Link>
+            <Link className="navbar-brand" to="/"> NewwwsApp </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -82,9 +80,8 @@ export class NavBar extends Component {
                   id="flexSwitchCheckDefault"
                 /> */}
                 <label
-                  className={`form-check-label text-${
-                    mode === "light" ? "dark" : "light"
-                  }`}
+                  className={`form-check-label text-${mode === "light" ? "dark" : "light"
+                    }`}
                   htmlFor="flexSwitchCheckDefault"
                 >
                   {`Enable ${mode === "light" ? "Dark" : "Light"}mode`}
