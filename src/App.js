@@ -1,13 +1,13 @@
 import "./App.css";
-import React, { Component } from "react";
+import React from "react";
 import Main from "./components/Main";
 
-export default class App extends Component {
-  render() {
-    return (
-      <>
-        <Main />
-      </>
-    );
-  }
+const App = () => {
+  return (
+    <>
+      <Main />
+    </>
+  );
 }
+
+export default App;
